@@ -21,7 +21,7 @@ public class ProductRepositoryTest {
     void saveMethod() {
         //create product
         Product product = new Product();
-        product.setName("product 11");
+        product.setName("product 1");
         product.setDescription("product 1 description");
         product.setSku("100ABC");
         product.setPrice(new BigDecimal(100));
@@ -125,15 +125,38 @@ public class ProductRepositoryTest {
     void deleteMethod() {
 
         //find an entity by id
-        Long id=4L;
+        Long id = 4L;
 
-        Product product=productRepository.findById(id).get();
+        Product product = productRepository.findById(id).get();
 
         //delete(entity)
         productRepository.delete(product);
 
 
+    }
 
+    @Test
+    void deleteAllMethod() {
+
+//        productRepository.deleteAll();
+
+
+        Product product = productRepository.findById(11L).get();
+
+
+        Product product11 = productRepository.findById(12L).get();
+
+
+        productRepository.deleteAll(List.of(product, product11));
+
+    }
+
+    @Test
+    void countMethod() {
+
+        long count = productRepository.count();
+
+        System.out.println(count);
 
 
 
