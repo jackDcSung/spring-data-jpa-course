@@ -111,19 +111,26 @@ public class ProductRepositoryTest {
     }
 
 
-
     @Test
-    void  deleteByIdMethod(){
+    void deleteByIdMethod() {
 
-        Long id=1L;
+        Long id = 1L;
 
         productRepository.deleteById(id);
 
 
+    }
 
+    @Test
+    void deleteMethod() {
 
+        //find an entity by id
+        Long id=4L;
 
+        Product product=productRepository.findById(id).get();
 
+        //delete(entity)
+        productRepository.delete(product);
 
 
 
@@ -136,21 +143,6 @@ public class ProductRepositoryTest {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
