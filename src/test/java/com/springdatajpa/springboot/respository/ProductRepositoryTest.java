@@ -96,5 +96,19 @@ public class ProductRepositoryTest {
 
     }
 
+    @Test
+    void findAllMethod() {
+
+
+        List<Product> products = productRepository.findAll();
+
+        products.forEach(p -> {
+
+            System.out.println(p.getName());
+        });
+
+
+    }
+
 
 }
