@@ -43,6 +43,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByDateCreatedBetween (LocalDateTime start , LocalDateTime end);
 
 
-
+    List<Product> findByNameIn(List<String> names);
 
 }

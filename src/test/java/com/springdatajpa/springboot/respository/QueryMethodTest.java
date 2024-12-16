@@ -205,4 +205,49 @@ public class QueryMethodTest {
 
 
     }
+        @Test
+        void findNameInMethod(){
+
+        List<Product> products=productRepository.findByNameIn(List.of("product 1","product 2"));
+
+
+
+
+
+            products.forEach(p -> {
+
+                System.out.println(p.getId());
+                System.out.println(p.getName());
+
+            });
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
