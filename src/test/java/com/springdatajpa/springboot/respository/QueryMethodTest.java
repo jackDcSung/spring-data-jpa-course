@@ -153,8 +153,7 @@ public class QueryMethodTest {
     void findByNameLikeMethod() {
 
 
-        List<Product> products=productRepository.findByNameLike("product 1");
-
+        List<Product> products = productRepository.findByNameLike("product 1");
 
 
         products.forEach(p -> {
@@ -165,14 +164,44 @@ public class QueryMethodTest {
         });
 
 
+    }
 
 
 
 
 
+
+
+
+
+    @Test
+    void findByNameBetweenMethod() {
+
+
+        List<Product> products = productRepository.findByPriceBetween(100,300);
+
+        products.forEach(p -> {
+
+            System.out.println(p.getId());
+            System.out.println(p.getName());
+
+        });
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
