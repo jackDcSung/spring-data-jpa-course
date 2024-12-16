@@ -90,6 +90,25 @@ public class QueryMethodTest {
 
 
 
+    @Test
+        void findDistinctByNAmeMethod(){
+
+        Product product=productRepository.findDistinctByName("product 2");
+
+        System.out.println(product.getId());
+        System.out.println(product.getName());
+        System.out.println(product.getDescription());
+
+
+
+
+        }
+
+
+
+
+
+
 
 
 
