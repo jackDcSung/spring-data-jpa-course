@@ -129,6 +129,48 @@ public class QueryMethodTest {
         });
 
 
+    }
+
+
+    @Test
+    void findByContainingMethod() {
+
+        List<Product> products = productRepository.findByNameContaining("product 1");
+
+
+        products.forEach(p -> {
+
+            System.out.println(p.getId());
+            System.out.println(p.getName());
+
+        });
+
+
+    }
+
+
+    @Test
+    void findByNameLikeMethod() {
+
+
+        List<Product> products=productRepository.findByNameLike("product 1");
+
+
+
+        products.forEach(p -> {
+
+            System.out.println(p.getId());
+            System.out.println(p.getName());
+
+        });
+
+
+
+
+
+
+
+
 
     }
 
