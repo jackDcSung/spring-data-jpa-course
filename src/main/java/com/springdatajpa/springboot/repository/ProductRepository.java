@@ -3,6 +3,7 @@ package com.springdatajpa.springboot.repository;
 
 import com.springdatajpa.springboot.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -50,7 +51,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findFirst2ByOrderByPriceAsc();
 
 
-
+    @Query("select  p from Product p where p.name=?1  or p.description=?2")
+    List<Product> findByNAmeOrDescriptionJPQLIndexParam(String name,String description);
 
 
 
