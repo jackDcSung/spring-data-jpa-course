@@ -47,18 +47,15 @@ public class QueryMethodTest {
     }
 
 
-
-
     @Test
     void findByNameOrDescriptionMethod() {
 
-        List<Product> products=productRepository.findByNameOrDescription("product 1",
+        List<Product> products = productRepository.findByNameOrDescription("product 1",
                 "product 1 description"
-                );
+        );
 
 
-
-        products.forEach(p->{
+        products.forEach(p -> {
 
             System.out.println(p.getId());
             System.out.println(p.getName());
@@ -67,19 +64,17 @@ public class QueryMethodTest {
 
 
     }
-
 
 
     @Test
     void findByNameAndDescriptionMethod() {
 
-        List<Product> products=productRepository.findByNameAndDescription("product 1",
+        List<Product> products = productRepository.findByNameAndDescription("product 1",
                 "product 1 description"
         );
 
 
-
-        products.forEach(p->{
+        products.forEach(p -> {
 
             System.out.println(p.getId());
             System.out.println(p.getName());
@@ -90,48 +85,52 @@ public class QueryMethodTest {
     }
 
 
-
     @Test
-        void findDistinctByNAmeMethod(){
+    void findDistinctByNAmeMethod() {
 
-        Product product=productRepository.findDistinctByName("product 2");
+        Product product = productRepository.findDistinctByName("product 2");
 
         System.out.println(product.getId());
         System.out.println(product.getName());
         System.out.println(product.getDescription());
 
 
+    }
+
+    @Test
+    void findByPriceGreaterThanThanMethod() {
+
+        List<Product> products = productRepository.findByPriceGreaterThan(new BigDecimal(100));
 
 
-        }
+        products.forEach(p -> {
 
-@Test
-void findByPriceGreaterThanThanMethod(){
+            System.out.println(p.getId());
+            System.out.println(p.getName());
 
-     List<Product> products=productRepository.findByPriceGreaterThan(new BigDecimal(100));
-
-
-    products.forEach(p->{
-
-        System.out.println(p.getId());
-        System.out.println(p.getName());
-
-    });
+        });
 
 
+    }
 
 
+    @Test
+    void findByPriceLessThanMethod() {
 
 
-
-}
-
+        List<Product> products = productRepository.findByPriceLessThan(new BigDecimal(150));
 
 
+        products.forEach(p -> {
 
+            System.out.println(p.getId());
+            System.out.println(p.getName());
+
+        });
 
 
 
+    }
 
 
 }
